@@ -15,7 +15,8 @@
         "-pdf",
         "-interaction=nonstopmode",
         "-synctex=1",
-        "%DOC%"
+        "-output-directory=build",
+        "%DOCFILE%"
       ],
       "env": {}
     }
@@ -27,5 +28,9 @@
         "docker-latexmk"
       ]
     }
-  ]
+  ],
+  // Automatically compile on save
+  "latex-workshop.latex.autoBuild.run": "onSave",
+  // Open the PDF inside a VS Code tab
+  "latex-workshop.view.pdf.viewer": "tab"
 }
