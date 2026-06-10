@@ -7,16 +7,18 @@
         "run",
         "--rm",
         "-v",
-        "${workspaceRoot}:/data",
+        "%WORKSPACE_FOLDER%:/data",
         "-w",
         "/data",
-        "qmcgaw/latexdevcontainer:latest-minimal",
+        "--entrypoint",
         "latexmk",
+        "qmcgaw/latexdevcontainer:latest-full",
         "-pdf",
         "-interaction=nonstopmode",
         "-synctex=1",
         "-output-directory=build",
-        "%DOCFILE%"
+        // Crucial fix: explicitly target the subfolder file relative to the root volume mount
+        "documents/main_thesis/main.tex"
       ],
       "env": {}
     }
@@ -29,8 +31,6 @@
       ]
     }
   ],
-  // Automatically compile on save
   "latex-workshop.latex.autoBuild.run": "onSave",
-  // Open the PDF inside a VS Code tab
   "latex-workshop.view.pdf.viewer": "tab"
 }
