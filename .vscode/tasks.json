@@ -2,7 +2,7 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "Собрать документ в Docker (Latexmk)",
+            "label": "Build the document inside Docker (Latexmk)",
             "type": "shell",
             "command": "docker",
             "args": [
@@ -15,6 +15,7 @@
                 "-pdf",
                 "-interaction=nonstopmode",
                 "-synctex=1",
+                "-output-directory=build",
                 "-cd",
                 "/data/${fileBasename}"
             ],
