@@ -1,36 +1,4 @@
 {
-  "latex-workshop.latex.tools": [
-    {
-      "name": "docker-latexmk",
-      "command": "docker",
-      "args": [
-        "run",
-        "--rm",
-        "-v",
-        "%WORKSPACE_FOLDER%:/data",
-        "-w",
-        "/data",
-        "--entrypoint",
-        "latexmk",
-        "qmcgaw/latexdevcontainer:latest-full",
-        "-pdf",
-        "-interaction=nonstopmode",
-        "-synctex=1",
-        "-output-directory=build",
-        // Crucial fix: explicitly target the subfolder file relative to the root volume mount
-        "documents/main_thesis/main.tex"
-      ],
-      "env": {}
-    }
-  ],
-  "latex-workshop.latex.recipes": [
-    {
-      "name": "Docker Latexmk",
-      "tools": [
-        "docker-latexmk"
-      ]
-    }
-  ],
-  "latex-workshop.latex.autoBuild.run": "onSave",
+  "latex-workshop.latex.autoBuild.run": "never",
   "latex-workshop.view.pdf.viewer": "tab"
 }
