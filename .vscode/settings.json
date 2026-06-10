@@ -1,0 +1,31 @@
+{
+  "latex-workshop.latex.tools": [
+    {
+      "name": "docker-latexmk",
+      "command": "docker",
+      "args": [
+        "run",
+        "--rm",
+        "-v",
+        "${workspaceRoot}:/data",
+        "-w",
+        "/data",
+        "qmcgaw/latexdevcontainer:latest-minimal",
+        "latexmk",
+        "-pdf",
+        "-interaction=nonstopmode",
+        "-synctex=1",
+        "%DOC%"
+      ],
+      "env": {}
+    }
+  ],
+  "latex-workshop.latex.recipes": [
+    {
+      "name": "Docker Latexmk",
+      "tools": [
+        "docker-latexmk"
+      ]
+    }
+  ]
+}
