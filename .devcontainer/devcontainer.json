@@ -1,0 +1,17 @@
+{
+    "name": "BMSTU report",
+    "build": {
+        "dockerfile": "Dockerfile",
+        "context": ".."
+    },
+    "customizations": {
+        "vscode": {
+            "settings": {},
+            "extensions": [
+                "mathematic.vscode-pdf",
+                "James-Yu.latex-workshop"
+            ]
+        }
+    },
+    "remoteUser": "root"
+}
