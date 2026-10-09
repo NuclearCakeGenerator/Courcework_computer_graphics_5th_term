@@ -39,3 +39,5 @@ build/
 *.build/
 bin/
 obj/
+
+*.pdf
