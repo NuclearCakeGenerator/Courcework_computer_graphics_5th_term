@@ -1,5 +1,5 @@
 {
-    "name": "BMSTU report",
+    "name": "BMSTU CompGraph_5th_term",
     "build": {
         "dockerfile": "Dockerfile",
         "context": ".."
